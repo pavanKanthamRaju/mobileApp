@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
+},{timestamps:true});
 // userSchema.pre("save", function (next) {
 //   const user = this;
 //   if (!user.isModified("password")) {
