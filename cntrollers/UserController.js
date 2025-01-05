@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 
 const validate = async (req,res,next)=>{
     const {email,password} = req.body
+    console.log("email: "+ email);
+    console.log("password: "+ password);
     try{
    const response = await User.findOne({email})
    if (!response) {
@@ -51,9 +53,11 @@ const validate = async (req,res,next)=>{
     
 }
 const test =  (req, res,next) => {
+
     res.send("Hello, World!!!!");
   };
   const registerUser =(req,res,next)=>{
+    console.log(`Incoming Request: ${req.method} ${req.url}`);
     res.send(`
       <html>
         <head>

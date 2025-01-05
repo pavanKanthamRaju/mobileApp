@@ -14,7 +14,10 @@ mongoose.connection.on("connected", () => {
 mongoose.connection.on("error", (err) => {
   console.log("connection error", err);
 });
-app.use('/user', UserRoute);
+app.use('/', UserRoute);
+
+
+
 app.listen(3000, '0.0.0.0',() => {
   console.log("at 3000");
 });
